@@ -304,6 +304,32 @@
             color: #0074cc;
             text-shadow: 0 2px 5px rgba(0, 119, 204, 0.2);
         }
+                /* Estilo do botão do WhatsApp */
+        .whatsapp-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-button .emoji {
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
@@ -427,6 +453,12 @@
                 <div class="contact-info">
                     <p>WhatsApp: (21) 99381-8489</p>
                     <p>Email: pedro.ferreiracmachado@gmail.com</p>
+                    <!-- Botão de WhatsApp -->
+                    <a href="https://wa.me/5521993818489?text=Olá,%20Pedrão!%20Gostaria%20de%20saber%20mais%20sobre%20as%20monitorias%20de%20Matemática,%20Química%20e%20Inglês." 
+                       class="whatsapp-button" 
+                       target="_blank">
+                        <span class="emoji">💬</span> Enviar mensagem direto
+                    </a>
                 </div>
             </div>
             
