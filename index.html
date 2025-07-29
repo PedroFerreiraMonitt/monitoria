@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoria de Matemática, Inglês e Química</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-                /* Ajusta hover para dispositivos touch */
-        .touch .subject:hover, .touch .chemistry-subject:hover {
+
+        .quebra {
+            display: none;
+        }
+
+        /* Ajusta hover para dispositivos touch */
+        .touch .subject:hover,
+        .touch .chemistry-subject:hover {
             transform: none !important;
         }
-                /* Garante que imagens não ultrapassem a tela */
+
+        /* Garante que imagens não ultrapassem a tela */
         img {
             max-width: 100%;
             height: auto;
         }
-        
+
         /* Ajusta o SVG de Matemática */
         .subject-icon svg {
             width: 64px;
             height: 64px;
         }
-        
+
         /* Otimiza o botão do WhatsApp para mobile */
         .whatsapp-button img.emoji {
             width: 24px !important;
             height: 24px !important;
             vertical-align: middle;
         }
+
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -36,6 +45,7 @@
             color: #333;
             background-image: radial-gradient(circle at 10% 20%, rgba(0, 20, 80, 0.05) 0%, rgba(0, 20, 80, 0.05) 90%);
         }
+
         .flyer-container {
             width: 800px;
             margin: 40px auto;
@@ -50,6 +60,7 @@
             padding: 3px;
             background-clip: padding-box;
         }
+
         .flyer-container::before {
             content: "";
             position: absolute;
@@ -61,6 +72,7 @@
             z-index: -1;
             border-radius: 5px;
         }
+
         .header {
             background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
             color: white;
@@ -69,6 +81,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .header::after {
             content: "";
             position: absolute;
@@ -76,19 +89,24 @@
             left: -50%;
             right: -50%;
             bottom: -50%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.1) 50%,
-                rgba(255, 255, 255, 0) 100%
-            );
+            background: linear-gradient(to bottom right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    rgba(255, 255, 255, 0) 100%);
             transform: rotate(30deg);
             animation: shine 6s infinite linear;
         }
+
         @keyframes shine {
-            0% { transform: translateX(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) rotate(30deg); }
+            0% {
+                transform: translateX(-100%) rotate(30deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(30deg);
+            }
         }
+
         .header h1 {
             margin: 0;
             font-size: 2.8em;
@@ -98,6 +116,7 @@
             z-index: 1;
             font-weight: 700;
         }
+
         .header p {
             margin: 15px 0 0;
             font-size: 1.3em;
@@ -106,11 +125,13 @@
             z-index: 1;
             opacity: 0.9;
         }
+
         .content {
             padding: 35px;
             position: relative;
             background-color: rgba(255, 255, 255, 0.95);
         }
+
         .profile {
             display: flex;
             align-items: center;
@@ -123,6 +144,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .profile::before {
             content: "";
             position: absolute;
@@ -132,9 +154,11 @@
             height: 100%;
             background: linear-gradient(to bottom, #001f3f, #0074cc);
         }
+
         .profile-info {
             flex: 1;
         }
+
         .profile h2 {
             color: #001f3f;
             margin-top: 0;
@@ -144,11 +168,13 @@
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
+
         .profile p {
             margin: 10px 0;
             font-size: 1.1em;
             line-height: 1.6;
         }
+
         .highlight {
             background-color: rgba(0, 119, 204, 0.1);
             padding: 3px 8px;
@@ -157,6 +183,7 @@
             color: #003366;
             border-left: 3px solid #0074cc;
         }
+
         .subjects {
             display: flex;
             flex-wrap: wrap;
@@ -164,6 +191,7 @@
             margin: 35px 0;
             gap: 20px;
         }
+
         .subject {
             background: white;
             padding: 25px;
@@ -176,22 +204,26 @@
             position: relative;
             overflow: hidden;
         }
+
         .subject:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 42, 106, 0.15);
         }
+
         .subject h3 {
             color: #001f3f;
             font-size: 1.6em;
             margin-top: 0;
             font-weight: 700;
         }
+
         .subject-icon {
             font-size: 3.5em;
             margin: 20px 0;
             color: #0074cc;
             text-shadow: 0 2px 5px rgba(0, 119, 204, 0.2);
         }
+
         .contact {
             background: linear-gradient(135deg, rgba(0, 42, 106, 0.03) 0%, rgba(0, 119, 204, 0.05) 100%);
             padding: 25px;
@@ -201,6 +233,7 @@
             border: 1px solid rgba(0, 42, 106, 0.1);
             position: relative;
         }
+
         .contact::before {
             content: "";
             position: absolute;
@@ -210,20 +243,21 @@
             height: 3px;
             background: linear-gradient(90deg, #001f3f, #0074cc, #001f3f);
         }
+
         .contact h3 {
             margin-top: 0;
             color: #001f3f;
             font-size: 1.5em;
             font-weight: 700;
         }
+
         .contact-info {
             font-size: 1.3em;
             font-weight: 600;
             color: #003366;
-            display: flex;
-            flex-direction: column;
             overflow-wrap: break-word;
         }
+
         .availability {
             margin-top: 30px;
             padding: 20px;
@@ -232,28 +266,33 @@
             text-align: center;
             border: 1px dashed rgba(0, 42, 106, 0.2);
         }
+
         .availability h3 {
             color: #001f3f;
             margin-top: 0;
         }
+
         .decoration {
             position: absolute;
             opacity: 0.08;
             z-index: 0;
             font-weight: bold;
         }
+
         .math-deco {
             top: 50px;
             right: 50px;
             font-size: 10em;
             color: #0074cc;
         }
+
         .english-deco {
             bottom: 50px;
             left: 50px;
             font-size: 10em;
             color: #0074cc;
         }
+
         .character {
             position: absolute;
             width: 130px;
@@ -261,22 +300,29 @@
             filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
             transition: all 0.3s ease;
         }
+
         .character:hover {
             transform: scale(1.05);
             filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
         }
+
         .math-character {
-            top: 120px;  /* Ajustado para cima */
-            right: 50px; /* Ajustado para a esquerda */
+            top: 120px;
+            /* Ajustado para cima */
+            right: 50px;
+            /* Ajustado para a esquerda */
         }
+
         .english-character {
             bottom: 30px;
             left: 30px;
         }
+
         .emoji {
             font-size: 1.6em;
             vertical-align: middle;
         }
+
         .tagline {
             font-style: italic;
             color: #003366;
@@ -286,22 +332,25 @@
             font-weight: 500;
             opacity: 0.8;
         }
+
         .crystal-effect {
             position: absolute;
             width: 100px;
             height: 100px;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 0;
         }
-                /* Novo estilo para a seção de Química */
+
+        /* Novo estilo para a seção de Química */
         .chemistry-section {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin: 20px 0;
         }
+
         .chemistry-subject {
             background: white;
             padding: 25px;
@@ -314,23 +363,27 @@
             position: relative;
             overflow: hidden;
         }
+
         .chemistry-subject:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 42, 106, 0.15);
         }
+
         .chemistry-subject h3 {
             color: #001f3f;
             font-size: 1.6em;
             margin-top: 0;
             font-weight: 700;
         }
+
         .chemistry-icon {
             font-size: 3.5em;
             margin: 20px 0;
             color: #0074cc;
             text-shadow: 0 2px 5px rgba(0, 119, 204, 0.2);
         }
-                /* Estilo do botão do WhatsApp */
+
+        /* Estilo do botão do WhatsApp */
         .whatsapp-button {
             display: inline-block;
             margin-top: 15px;
@@ -346,171 +399,207 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .whatsapp-button:hover {
             background-color: #128C7E;
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
         }
-        
+
         .whatsapp-button .emoji {
             margin-right: 8px;
         }
-            /* Dispositivos com tela até 768px (celulares e tablets em portrait) */
-    @media (max-width: 768px) {
-        .flyer-container {
-            width: 95% !important; /* Ocupa quase toda a tela */
-            margin: 20px auto !important;
-            border-width: 8px !important;
-        }
-    
-        .header h1 {
-            font-size: 1.8em !important; /* Título menor */
-            line-height: 1.2;
-        }
-    
-        .header p {
-            font-size: 1em !important;
-        }
-    
-        .profile, .subject, .chemistry-subject, .contact, .availability {
-            padding: 15px !important; /* Reduz padding */
-        }
-    
-        .profile h2 {
-            font-size: 1.5em !important;
-        }
-    
-        .subjects {
-            flex-direction: column; /* Empilha as matérias */
-            gap: 15px !important;
-        }
-    
-        /* .subject, .chemistry-subject {
+
+        /* Dispositivos com tela até 768px (celulares e tablets em portrait) */
+        @media (max-width: 768px) {
+            .quebra {
+                display: block;
+            }
+
+            .flyer-container {
+                width: 95% !important;
+                /* Ocupa quase toda a tela */
+                margin: 20px auto !important;
+                border-width: 8px !important;
+            }
+
+            .header h1 {
+                font-size: 1.8em !important;
+                /* Título menor */
+                line-height: 1.2;
+            }
+
+            .header p {
+                font-size: 1em !important;
+            }
+
+            .profile,
+            .subject,
+            .chemistry-subject,
+            .contact,
+            .availability {
+                padding: 15px !important;
+                /* Reduz padding */
+            }
+
+            .profile h2 {
+                font-size: 1.5em !important;
+            }
+
+            .subjects {
+                flex-direction: column;
+                /* Empilha as matérias */
+                gap: 15px !important;
+            }
+
+            /* .subject, .chemistry-subject {
             width: 100% !important; /* Ocupa toda a largura */
-        } */
-    
-        .character {
-            display: none; /* Remove personagens em telas pequenas */
+            /* } */
+
+            .character {
+                display: none;
+                /* Remove personagens em telas pequenas */
+            }
+
+            .whatsapp-button {
+                padding: 10px 15px !important;
+                font-size: 1em !important;
+            }
+
+            .contact-info,
+            .availability p {
+                font-size: 1em !important;
+
+            }
+
+            .highlight {
+                font-size: 1rem;
+            }
         }
-    
-        .whatsapp-button {
-            padding: 10px 15px !important;
-            font-size: 1em !important;
+
+        /* Dispositivos muito pequenos (até 480px) */
+        @media (max-width: 480px) {
+            .quebra {
+                display: block;
+            }
+
+            .header {
+                padding: 20px 15px !important;
+            }
+
+            .header h1 {
+                font-size: 1.5em !important;
+            }
+
+            .profile h2 {
+                font-size: 1.3em !important;
+            }
+
+            .subject h3,
+            .chemistry-subject h3 {
+                font-size: 1.3em !important;
+            }
+
+            .subject-icon,
+            .chemistry-icon img {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .highlight {
+                font-size: 1rem;
+            }
         }
-    
-        .contact-info, .availability p {
-            font-size: 1em !important;
-            
-        }
-    }
-    
-    /* Dispositivos muito pequenos (até 480px) */
-    @media (max-width: 480px) {
-        .header {
-            padding: 20px 15px !important;
-        }
-    
-        .header h1 {
-            font-size: 1.5em !important;
-        }
-    
-        .profile h2 {
-            font-size: 1.3em !important;
-        }
-    
-        .subject h3, .chemistry-subject h3 {
-            font-size: 1.3em !important;
-        }
-    
-        .subject-icon, .chemistry-icon img {
-            width: 48px !important;
-            height: 48px !important;
-        }
-    }
-        
     </style>
 </head>
+
 <body>
     <div class="flyer-container">
         <!-- Efeitos cristalinos -->
         <div class="crystal-effect" style="top: 20%; left: 10%;"></div>
         <div class="crystal-effect" style="top: 70%; right: 15%; width: 150px; height: 150px;"></div>
-        
+
         <div class="header">
             <h1>MONITORIA DE MATEMÁTICA, INGLÊS E QUÍMICA</h1>
             <p>Aprenda com quem entende do assunto! <span class="emoji">🎯</span></p>
         </div>
-        
-        <div class="content">            
+
+        <div class="content">
             <!-- Imagens de personagens lúdicos com posições ajustadas -->
-            <img src="https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/74/74034.png" alt="Personagem de Matemática" class="character math-character">
-            <img src="https://img1.picmix.com/output/stamp/normal/7/2/8/7/2727827_8bd85.png" alt="Personagem de Inglês" class="character english-character">
-            
+            <img src="https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/74/74034.png"
+                alt="Personagem de Matemática" class="character math-character">
+            <img src="https://img1.picmix.com/output/stamp/normal/7/2/8/7/2727827_8bd85.png" alt="Personagem de Inglês"
+                class="character english-character">
+
             <div class="profile">
                 <div class="profile-info">
                     <h2>Pedro Ferreira da Cruz Machado</h2>
-                    <p><span class="emoji">🎓</span> Graduando em <span class="highlight">Farmácia pela UFRJ</span></p>
-                    <p><span class="emoji">🏆</span> Formado pelo curso de inglês <span class="highlight">YES! Idiomas</span></p>
-                    <p><span class="emoji">📚</span> Experiência em monitorias para <span class="highlight">Ensino Médio e Fundamental</span></p>
+                    <p><span class="emoji">🎓</span> Graduando em <br class="quebra"><span class="highlight">Farmácia
+                            pela UFRJ</span></p>
+                    <p><span class="emoji">🏆</span> Formado pelo curso de inglês <br class="quebra"><span
+                            class="highlight">YES!
+                            Idiomas</span></p>
+                    <p><span class="emoji">📚</span> Experiência em monitorias para <br class="quebra"><span
+                            class="highlight">Ensino Médio
+                            e Fundamental</span></p>
                 </div>
             </div>
-            
+
             <div class="subjects">
                 <div class="subject">
                     <div class="subject-icon">
-                        <svg class="subject-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" shape-rendering="geometricPrecision">
-                          <!-- Quadrantes com sua paleta -->
-                          <rect x="0"  y="0"  width="32" height="32" rx="6" fill="#003366"/>
-                          <rect x="32" y="0"  width="32" height="32" rx="6" fill="#0074cc"/>
-                          <rect x="0"  y="32" width="32" height="32" rx="6" fill="#005fa3"/>
-                          <rect x="32" y="32" width="32" height="32" rx="6" fill="#001f3f"/>
-                        
-                          <!-- + -->
-                          <g stroke-linecap="round">
-                            <g stroke="#f0f8ff" stroke-width="6">
-                              <line x1="16" y1="8" x2="16" y2="24"/>
-                              <line x1="8" y1="16" x2="24" y2="16"/>
+                        <svg class="subject-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64"
+                            height="64" shape-rendering="geometricPrecision">
+                            <!-- Quadrantes com sua paleta -->
+                            <rect x="0" y="0" width="32" height="32" rx="6" fill="#003366" />
+                            <rect x="32" y="0" width="32" height="32" rx="6" fill="#0074cc" />
+                            <rect x="0" y="32" width="32" height="32" rx="6" fill="#005fa3" />
+                            <rect x="32" y="32" width="32" height="32" rx="6" fill="#001f3f" />
+
+                            <!-- + -->
+                            <g stroke-linecap="round">
+                                <g stroke="#f0f8ff" stroke-width="6">
+                                    <line x1="16" y1="8" x2="16" y2="24" />
+                                    <line x1="8" y1="16" x2="24" y2="16" />
+                                </g>
+                                <g stroke="#001f3f" stroke-width="1.5">
+                                    <line x1="16" y1="8" x2="16" y2="24" />
+                                    <line x1="8" y1="16" x2="24" y2="16" />
+                                </g>
                             </g>
-                            <g stroke="#001f3f" stroke-width="1.5">
-                              <line x1="16" y1="8" x2="16" y2="24"/>
-                              <line x1="8" y1="16" x2="24" y2="16"/>
+
+                            <!-- - -->
+                            <g stroke-linecap="round">
+                                <g stroke="#f0f8ff" stroke-width="6">
+                                    <line x1="40" y1="16" x2="56" y2="16" />
+                                </g>
+                                <g stroke="#001f3f" stroke-width="1.5">
+                                    <line x1="40" y1="16" x2="56" y2="16" />
+                                </g>
                             </g>
-                          </g>
-                        
-                          <!-- - -->
-                          <g stroke-linecap="round">
-                            <g stroke="#f0f8ff" stroke-width="6">
-                              <line x1="40" y1="16" x2="56" y2="16"/>
+
+                            <!-- × -->
+                            <g stroke-linecap="round">
+                                <g stroke="#f0f8ff" stroke-width="6">
+                                    <line x1="8" y1="40" x2="24" y2="56" />
+                                    <line x1="8" y1="56" x2="24" y2="40" />
+                                </g>
+                                <g stroke="#001f3f" stroke-width="1.5">
+                                    <line x1="8" y1="40" x2="24" y2="56" />
+                                    <line x1="8" y1="56" x2="24" y2="40" />
+                                </g>
                             </g>
-                            <g stroke="#001f3f" stroke-width="1.5">
-                              <line x1="40" y1="16" x2="56" y2="16"/>
+
+                            <!-- = -->
+                            <g stroke-linecap="round">
+                                <g stroke="#f0f8ff" stroke-width="6">
+                                    <line x1="40" y1="44" x2="56" y2="44" />
+                                    <line x1="40" y1="52" x2="56" y2="52" />
+                                </g>
+                                <g stroke="#001f3f" stroke-width="1.5">
+                                    <line x1="40" y1="44" x2="56" y2="44" />
+                                    <line x1="40" y1="52" x2="56" y2="52" />
+                                </g>
                             </g>
-                          </g>
-                        
-                          <!-- × -->
-                          <g stroke-linecap="round">
-                            <g stroke="#f0f8ff" stroke-width="6">
-                              <line x1="8" y1="40" x2="24" y2="56"/>
-                              <line x1="8" y1="56" x2="24" y2="40"/>
-                            </g>
-                            <g stroke="#001f3f" stroke-width="1.5">
-                              <line x1="8" y1="40" x2="24" y2="56"/>
-                              <line x1="8" y1="56" x2="24" y2="40"/>
-                            </g>
-                          </g>
-                        
-                          <!-- = -->
-                          <g stroke-linecap="round">
-                            <g stroke="#f0f8ff" stroke-width="6">
-                              <line x1="40" y1="44" x2="56" y2="44"/>
-                              <line x1="40" y1="52" x2="56" y2="52"/>
-                            </g>
-                            <g stroke="#001f3f" stroke-width="1.5">
-                              <line x1="40" y1="44" x2="56" y2="44"/>
-                              <line x1="40" y1="52" x2="56" y2="52"/>
-                            </g>
-                          </g>
                         </svg>
 
                     </div>
@@ -518,10 +607,11 @@
                     <p>Explicações descontraídas e de forma leve.</p>
                     <p>Abordagem focada em resolução de problemas e desenvolvimento do raciocínio lógico.</p>
                 </div>
-                
+
                 <div class="subject">
                     <div class="subject-icon">
-                        <img width="64" height="64" style="border-radius:6px; margin-top:1.25rem" src="./76a2228f-41b0-4f89-80ce-63a41d76f458.png">
+                        <img width="64" height="64" style="border-radius:6px; margin-top:1.25rem"
+                            src="./76a2228f-41b0-4f89-80ce-63a41d76f458.png">
                     </div>
                     <h3>Inglês</h3>
                     <p>Metodologia com foco em gramática para dirimir possíveis dúvidas.</p>
@@ -530,7 +620,8 @@
                 <div class="subject">
                     <div class="chemistry-icon">
                         <!-- Imagem PNG para Química - substitua pelo seu arquivo -->
-                        <img src="erlçenmeyer.png" width="64" height="64" style="border-radius:6px; margin-top:1.25rem" alt="Ícone de Química">
+                        <img src="erlçenmeyer.png" width="64" height="64" style="border-radius:6px; margin-top:1.25rem"
+                            alt="Ícone de Química">
                     </div>
                     <h3>Química</h3>
                     <p>Aulas dinâmicas com abordagem descomplicada.</p>
@@ -538,39 +629,39 @@
                 </div>
             </div>
             <!-- Nova seção de Química -->
-<!--             <div class="chemistry-section">
+            <!--             <div class="chemistry-section">
                 
             </div> -->
-            
+
             <div class="availability">
                 <h3><span class="emoji">📅</span> Disponibilidade</h3>
                 <p>Quinta (a partir das 19h) e Sábado (tarde e noite)</p>
                 <p>Aulas presenciais e online</p>
             </div>
-            
+
             <div class="contact">
                 <h3><span class="emoji">📱</span> Entre em contato agora!</h3>
                 <div class="contact-info">
                     <p>WhatsApp: (21) 99381-8489</p>
-                    <p>Email: pedro.ferreiracmachado@gmail.com</p>
+                    <p>Email: pedro.ferreiracmachado<br class="quebra">@gmail.com</p>
                     <!-- Botão de WhatsApp -->
-                    <a href="https://wa.me/5521993818489?text=Olá,%20Pedrão!%20Gostaria%20de%20saber%20mais%20sobre%20as%20monitorias%20de%20Matemática,%20Química%20e%20Inglês." 
-                       class="whatsapp-button" 
-                       target="_blank">
-                            <img class="emoji" src="WhatsApp.svg.webp" width="48" height="48">
-                         Mandar mensagem
+                    <a href="https://wa.me/5521993818489?text=Olá,%20Pedrão!%20Gostaria%20de%20saber%20mais%20sobre%20as%20monitorias%20de%20Matemática,%20Química%20e%20Inglês."
+                        class="whatsapp-button" target="_blank">
+                        <img class="emoji" src="WhatsApp.svg.webp" width="48" height="48">
+                        Mandar mensagem
                     </a>
                 </div>
             </div>
-            
+
             <p class="tagline">"Rumo a uma gloriosa conquista!"</p>
         </div>
     </div>
     <script>
-    // Adiciona classe 'touch' ao body se for dispositivo touch
-    document.body.classList.add(
-        'ontouchstart' in window || navigator.msMaxTouchPoints ? 'touch' : 'no-touch'
-    );
-</script>
+        // Adiciona classe 'touch' ao body se for dispositivo touch
+        document.body.classList.add(
+            'ontouchstart' in window || navigator.msMaxTouchPoints ? 'touch' : 'no-touch'
+        );
+    </script>
 </body>
+
 </html>
