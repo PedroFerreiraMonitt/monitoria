@@ -220,6 +220,9 @@
             font-size: 1.3em;
             font-weight: 600;
             color: #003366;
+            display: flex;
+            flex-direction: column;
+            overflow-wrap: break-word;
         }
         .availability {
             margin-top: 30px;
@@ -383,13 +386,13 @@
             gap: 15px !important;
         }
     
-        .subject, .chemistry-subject {
+        /* .subject, .chemistry-subject {
             width: 100% !important; /* Ocupa toda a largura */
-        }
-    
-        /* .character {
-            display: none; /* Remove personagens em telas pequenas */
         } */
+    
+        .character {
+            display: none; /* Remove personagens em telas pequenas */
+        }
     
         .whatsapp-button {
             padding: 10px 15px !important;
@@ -397,7 +400,8 @@
         }
     
         .contact-info, .availability p {
-            font-size: 1.0em !important;
+            font-size: 1em !important;
+            
         }
     }
     
