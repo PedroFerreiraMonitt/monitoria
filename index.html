@@ -159,6 +159,7 @@
         }
         .subjects {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             margin: 35px 0;
             gap: 20px;
@@ -455,58 +456,58 @@
                 <div class="subject">
                     <div class="subject-icon">
                         <svg class="subject-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" shape-rendering="geometricPrecision">
-  <!-- Quadrantes com sua paleta -->
-  <rect x="0"  y="0"  width="32" height="32" rx="6" fill="#003366"/>
-  <rect x="32" y="0"  width="32" height="32" rx="6" fill="#0074cc"/>
-  <rect x="0"  y="32" width="32" height="32" rx="6" fill="#005fa3"/>
-  <rect x="32" y="32" width="32" height="32" rx="6" fill="#001f3f"/>
-
-  <!-- + -->
-  <g stroke-linecap="round">
-    <g stroke="#f0f8ff" stroke-width="6">
-      <line x1="16" y1="8" x2="16" y2="24"/>
-      <line x1="8" y1="16" x2="24" y2="16"/>
-    </g>
-    <g stroke="#001f3f" stroke-width="1.5">
-      <line x1="16" y1="8" x2="16" y2="24"/>
-      <line x1="8" y1="16" x2="24" y2="16"/>
-    </g>
-  </g>
-
-  <!-- - -->
-  <g stroke-linecap="round">
-    <g stroke="#f0f8ff" stroke-width="6">
-      <line x1="40" y1="16" x2="56" y2="16"/>
-    </g>
-    <g stroke="#001f3f" stroke-width="1.5">
-      <line x1="40" y1="16" x2="56" y2="16"/>
-    </g>
-  </g>
-
-  <!-- × -->
-  <g stroke-linecap="round">
-    <g stroke="#f0f8ff" stroke-width="6">
-      <line x1="8" y1="40" x2="24" y2="56"/>
-      <line x1="8" y1="56" x2="24" y2="40"/>
-    </g>
-    <g stroke="#001f3f" stroke-width="1.5">
-      <line x1="8" y1="40" x2="24" y2="56"/>
-      <line x1="8" y1="56" x2="24" y2="40"/>
-    </g>
-  </g>
-
-  <!-- = -->
-  <g stroke-linecap="round">
-    <g stroke="#f0f8ff" stroke-width="6">
-      <line x1="40" y1="44" x2="56" y2="44"/>
-      <line x1="40" y1="52" x2="56" y2="52"/>
-    </g>
-    <g stroke="#001f3f" stroke-width="1.5">
-      <line x1="40" y1="44" x2="56" y2="44"/>
-      <line x1="40" y1="52" x2="56" y2="52"/>
-    </g>
-  </g>
-</svg>
+                          <!-- Quadrantes com sua paleta -->
+                          <rect x="0"  y="0"  width="32" height="32" rx="6" fill="#003366"/>
+                          <rect x="32" y="0"  width="32" height="32" rx="6" fill="#0074cc"/>
+                          <rect x="0"  y="32" width="32" height="32" rx="6" fill="#005fa3"/>
+                          <rect x="32" y="32" width="32" height="32" rx="6" fill="#001f3f"/>
+                        
+                          <!-- + -->
+                          <g stroke-linecap="round">
+                            <g stroke="#f0f8ff" stroke-width="6">
+                              <line x1="16" y1="8" x2="16" y2="24"/>
+                              <line x1="8" y1="16" x2="24" y2="16"/>
+                            </g>
+                            <g stroke="#001f3f" stroke-width="1.5">
+                              <line x1="16" y1="8" x2="16" y2="24"/>
+                              <line x1="8" y1="16" x2="24" y2="16"/>
+                            </g>
+                          </g>
+                        
+                          <!-- - -->
+                          <g stroke-linecap="round">
+                            <g stroke="#f0f8ff" stroke-width="6">
+                              <line x1="40" y1="16" x2="56" y2="16"/>
+                            </g>
+                            <g stroke="#001f3f" stroke-width="1.5">
+                              <line x1="40" y1="16" x2="56" y2="16"/>
+                            </g>
+                          </g>
+                        
+                          <!-- × -->
+                          <g stroke-linecap="round">
+                            <g stroke="#f0f8ff" stroke-width="6">
+                              <line x1="8" y1="40" x2="24" y2="56"/>
+                              <line x1="8" y1="56" x2="24" y2="40"/>
+                            </g>
+                            <g stroke="#001f3f" stroke-width="1.5">
+                              <line x1="8" y1="40" x2="24" y2="56"/>
+                              <line x1="8" y1="56" x2="24" y2="40"/>
+                            </g>
+                          </g>
+                        
+                          <!-- = -->
+                          <g stroke-linecap="round">
+                            <g stroke="#f0f8ff" stroke-width="6">
+                              <line x1="40" y1="44" x2="56" y2="44"/>
+                              <line x1="40" y1="52" x2="56" y2="52"/>
+                            </g>
+                            <g stroke="#001f3f" stroke-width="1.5">
+                              <line x1="40" y1="44" x2="56" y2="44"/>
+                              <line x1="40" y1="52" x2="56" y2="52"/>
+                            </g>
+                          </g>
+                        </svg>
 
                     </div>
                     <h3>Matemática</h3>
@@ -522,9 +523,6 @@
                     <p>Metodologia com foco em gramática para dirimir possíveis dúvidas.</p>
                     <p>Material baseado no aluno.</p>
                 </div>
-            </div>
-            <!-- Nova seção de Química -->
-            <div class="chemistry-section">
                 <div class="chemistry-subject">
                     <div class="chemistry-icon">
                         <!-- Imagem PNG para Química - substitua pelo seu arquivo -->
@@ -535,6 +533,10 @@
                     <p>Foco em conceitos fundamentais e resolução de exercícios.</p>
                 </div>
             </div>
+            <!-- Nova seção de Química -->
+<!--             <div class="chemistry-section">
+                
+            </div> -->
             
             <div class="availability">
                 <h3><span class="emoji">📅</span> Disponibilidade</h3>
