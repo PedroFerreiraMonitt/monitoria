@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoria de Matemática e Inglês</title>
+    <title>Monitoria de Matemática, Inglês e Química</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
         
@@ -270,6 +270,40 @@
             pointer-events: none;
             z-index: 0;
         }
+                /* Novo estilo para a seção de Química */
+        .chemistry-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .chemistry-subject {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 48%;
+            box-shadow: 0 8px 25px rgba(0, 42, 106, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 42, 106, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .chemistry-subject:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 42, 106, 0.15);
+        }
+        .chemistry-subject h3 {
+            color: #001f3f;
+            font-size: 1.6em;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        .chemistry-icon {
+            font-size: 3.5em;
+            margin: 20px 0;
+            color: #0074cc;
+            text-shadow: 0 2px 5px rgba(0, 119, 204, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -367,6 +401,18 @@
                     <h3>Inglês</h3>
                     <p>Metodologia com foco em gramática para dirimir possíveis dúvidas.</p>
                     <p>Material baseado no aluno.</p>
+                </div>
+            </div>
+            <!-- Nova seção de Química -->
+            <div class="chemistry-section">
+                <div class="chemistry-subject">
+                    <div class="chemistry-icon">
+                        <!-- Imagem PNG para Química - substitua pelo seu arquivo -->
+                        <img src="quimica-icon.png" width="64" height="64" style="border-radius:6px; margin-top:1.25rem" alt="Ícone de Química">
+                    </div>
+                    <h3>Química</h3>
+                    <p>Aulas dinâmicas com abordagem descomplicada.</p>
+                    <p>Foco em conceitos fundamentais e resolução de exercícios.</p>
                 </div>
             </div>
             
