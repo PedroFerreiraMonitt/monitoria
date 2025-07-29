@@ -6,7 +6,28 @@
     <title>Monitoria de Matemática, Inglês e Química</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+                /* Ajusta hover para dispositivos touch */
+        .touch .subject:hover, .touch .chemistry-subject:hover {
+            transform: none !important;
+        }
+                /* Garante que imagens não ultrapassem a tela */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
         
+        /* Ajusta o SVG de Matemática */
+        .subject-icon svg {
+            width: 64px;
+            height: 64px;
+        }
+        
+        /* Otimiza o botão do WhatsApp para mobile */
+        .whatsapp-button img.emoji {
+            width: 24px !important;
+            height: 24px !important;
+            vertical-align: middle;
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -138,6 +159,7 @@
         }
         .subjects {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             margin: 35px 0;
             gap: 20px;
@@ -273,6 +295,7 @@
                 /* Novo estilo para a seção de Química */
         .chemistry-section {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             margin: 20px 0;
         }
@@ -330,6 +353,78 @@
         .whatsapp-button .emoji {
             margin-right: 8px;
         }
+            /* Dispositivos com tela até 768px (celulares e tablets em portrait) */
+    @media (max-width: 768px) {
+        .flyer-container {
+            width: 95% !important; /* Ocupa quase toda a tela */
+            margin: 20px auto !important;
+            border-width: 8px !important;
+        }
+    
+        .header h1 {
+            font-size: 1.8em !important; /* Título menor */
+            line-height: 1.2;
+        }
+    
+        .header p {
+            font-size: 1em !important;
+        }
+    
+        .profile, .subject, .chemistry-subject, .contact, .availability {
+            padding: 15px !important; /* Reduz padding */
+        }
+    
+        .profile h2 {
+            font-size: 1.5em !important;
+        }
+    
+        .subjects {
+            flex-direction: column; /* Empilha as matérias */
+            gap: 15px !important;
+        }
+    
+        .subject, .chemistry-subject {
+            width: 100% !important; /* Ocupa toda a largura */
+        }
+    
+        .character {
+            display: none; /* Remove personagens em telas pequenas */
+        }
+    
+        .whatsapp-button {
+            padding: 10px 15px !important;
+            font-size: 1em !important;
+        }
+    
+        .contact-info, .availability p {
+            font-size: 1.1em !important;
+        }
+    }
+    
+    /* Dispositivos muito pequenos (até 480px) */
+    @media (max-width: 480px) {
+        .header {
+            padding: 20px 15px !important;
+        }
+    
+        .header h1 {
+            font-size: 1.5em !important;
+        }
+    
+        .profile h2 {
+            font-size: 1.3em !important;
+        }
+    
+        .subject h3, .chemistry-subject h3 {
+            font-size: 1.3em !important;
+        }
+    
+        .subject-icon, .chemistry-icon img {
+            width: 48px !important;
+            height: 48px !important;
+        }
+    }
+        
     </style>
 </head>
 <body>
@@ -466,5 +561,11 @@
             <p class="tagline">"Rumo a uma gloriosa conquista!"</p>
         </div>
     </div>
+    <script>
+    // Adiciona classe 'touch' ao body se for dispositivo touch
+    document.body.classList.add(
+        'ontouchstart' in window || navigator.msMaxTouchPoints ? 'touch' : 'no-touch'
+    );
+</script>
 </body>
 </html>
