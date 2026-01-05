@@ -23,38 +23,6 @@
             margin: 0 auto;
             padding: 20px;
             background-color: #f9f9f9;
-            position: relative; /* Adicionado para posicionamento do botão */
-        }
-
-        /* Botão de Download PDF - POSICIONAMENTO FIXO NO TOPO */
-        .pdf-download {
-            position: fixed; /* Alterado para fixed */
-            top: 20px;
-            right: 20px;
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-            z-index: 1000; /* Z-index alto para ficar sobre tudo */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .pdf-download:hover {
-            background-color: white;
-            color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-        }
-
-        .pdf-download i {
-            font-size: 1.1rem;
         }
 
         .resume {
@@ -63,7 +31,7 @@
             border-radius: 10px;
             overflow: hidden;
             position: relative;
-            margin-top: 20px; /* Ajustado para o botão fixed */
+            margin-top: 0;
         }
 
         .header {
@@ -164,10 +132,6 @@
             .email-link {
                 color: #001f3f !important;
                 text-decoration: underline !important;
-            }
-            
-            .pdf-download {
-                display: none !important; /* Oculta o botão na impressão */
             }
             
             body {
@@ -358,33 +322,8 @@
                 padding: 35px 20px 25px 20px;
             }
             
-            .pdf-download {
-                position: fixed;
-                top: 10px;
-                right: 10px;
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .pdf-download i {
-                font-size: 1rem;
-            }
-            
             body {
                 padding: 10px;
-            }
-        }
-
-        /* Estilos específicos para telas muito pequenas */
-        @media (max-width: 480px) {
-            .pdf-download {
-                padding: 6px 12px;
-                font-size: 0.85rem;
-                gap: 5px;
-            }
-            
-            .pdf-download i {
-                font-size: 0.9rem;
             }
         }
     </style>
@@ -392,12 +331,6 @@
 </head>
 
 <body>
-    <!-- Botão para download/impressão em PDF - POSICIONAMENTO FIXO -->
-    <a href="javascript:void(0)" onclick="downloadAsPDF()" class="pdf-download" id="pdfButton">
-        <i class="fas fa-file-pdf"></i>
-        <span class="button-text">Baixar PDF</span>
-    </a>
-
     <div class="resume">
         <div class="header">
             <h1>PEDRO FERREIRA DA CRUZ MACHADO</h1>
@@ -605,42 +538,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function downloadAsPDF() {
-            // Salvar posição atual de rolagem
-            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Mostrar alerta informativo
-            const userConfirmed = confirm("Para salvar como PDF:\n\n1. Na janela de impressão, selecione 'Salvar como PDF'\n2. Ajuste as configurações se necessário\n3. Clique em 'Salvar'\n\nDeseja continuar?");
-            
-            if (userConfirmed) {
-                // Abrir a caixa de diálogo de impressão
-                window.print();
-                
-                // Restaurar posição de rolagem após um pequeno delay
-                setTimeout(() => {
-                    window.scrollTo(0, scrollPosition);
-                }, 500);
-            }
-        }
-        
-        // Adicionar um listener para quando a página for impressa
-        window.addEventListener('afterprint', function() {
-            console.log('Impressão concluída. Se não salvou como PDF, tente novamente selecionando "Salvar como PDF" na impressora.');
-        });
-        
-        // Adicionar efeito de destaque no botão quando o usuário rolar
-        window.addEventListener('scroll', function() {
-            const pdfButton = document.getElementById('pdfButton');
-            if (window.scrollY > 100) {
-                pdfButton.style.boxShadow = '0 6px 18px rgba(0, 0, 0, 0.3)';
-                pdfButton.style.transform = 'scale(1.02)';
-            } else {
-                pdfButton.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-                pdfButton.style.transform = 'scale(1)';
-            }
-        });
-    </script>
 </body>
 </html>
